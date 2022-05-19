@@ -1,0 +1,147 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Michael Jackson",
+      "age": 51,
+      "address": "USA"
+    },
+    {
+      "id": 2,
+      "name": "Madonna Ciccone",
+      "age": 63,
+      "address": "USA"
+    },
+    {
+      "id": 3,
+      "name": "Stefani Germanotta",
+      "age": 36,
+      "address": "USA"
+    },
+    {
+      "id": 4,
+      "name": "Britney Spears",
+      "age": 40,
+      "address": "USA"
+    },
+    {
+      "id": 5,
+      "name": "Rihanna Fenty",
+      "age": 34,
+      "address": "Barbados"
+    },
+    {
+      "id": 6,
+      "name": "Beyoncé Giselle Knowles",
+      "age": 40,
+      "address": "USA"
+    },
+    {
+      "id": 7,
+      "name": "Ariana Grande",
+      "age": 28,
+      "address": "USA"
+    },
+    {
+      "id": 8,
+      "name": "Faraón Love Shady",
+      "age": 21,
+      "address": "PERU"
+    },
+    {
+      "id": 9,
+      "name": "Benito Martinez (Bad Bunny)",
+      "age": 28,
+      "address": "PUERTO RICO"
+    },
+    {
+      "id": 10,
+      "name": "Chencho Corleone",
+      "age": 43,
+      "address": "PUERTO RICO"
+    },
+    {
+      "id": 11,
+      "name": "Rosalia Vila",
+      "age": 28,
+      "address": "ESPAÑA"
+    },
+    {
+      "id": 12,
+      "name": "Tokischa Peralta",
+      "age": 26,
+      "address": "REPUBLICA DOMINACANA"
+    },
+    {
+      "name": "Adele",
+      "age": "34",
+      "address": "Reino Unido",
+      "id": 14
+    },
+    {
+      "name": "Lana del rey",
+      "age": "36",
+      "address": "USA",
+      "id": 15
+    },
+    {
+      "name": "Vivian Maite",
+      "age": "22",
+      "address": "PERU ",
+      "id": 16
+    }
+  ],
+
+  "skills": [
+    {
+      "id": 1,
+      "name": "Cantante"
+    },
+    {
+      "id": 2,
+      "name": "Bailarin(a)"
+    },
+    {
+      "id": 3,
+      "name": "Actor/Actriz"
+    },
+    {
+      "id": 4,
+      "name": "Performer"
+    }
+  ],
+
+  "competences": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "skillId": 1
+
+    },
+    {
+      "id": 2,
+      "studentId": 2,
+      "skillId": 1
+
+    },
+    {
+      "id": 3,
+      "studentId": 3,
+      "skillId": 2
+
+    },
+    {
+      "id": 4,
+      "studentId": 4,
+      "skillId": 1
+
+    },
+    {
+      "id": 5,
+      "studentId": 5,
+      "skillId": 1
+
+    }
+  ]
+
+}

@@ -1,0 +1,78 @@
+<p>students works!</p>
+<div class="table-wrapper">
+
+  <h1>Students Catalogue</h1>
+  <h2>{{isEditMode ? 'Edit Student' : 'Add new Student'}}</h2>
+
+  <!--  para que no salga error hay que hacer el onSummit en el component-->
+  <form (submit)="onSummit()" #studentForm='ngForm'>
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" required
+             [(ngModel)]="studentsData.name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Age" name="age" required
+             [(ngModel)]="studentsData.age">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Address" name="address" required
+             [(ngModel)]="studentsData.address">
+    </mat-form-field>
+   <ng-container *ngIf="isEditMode; else elseTemplate">
+     <button mat-button color="primary"> Update </button>
+     <button mat-button color="warn" (click)="cancelEdit()"> Cancel </button>
+   </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-button color="primary">Add</button>
+    </ng-template>
+  </form>
+
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <!--      definiendo nombre de la columna-->
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="">#id</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <!--      definiendo nombre de la columna-->
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="">name</th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="age">
+      <!--      definiendo nombre de la columna-->
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="">age</th>
+      <td mat-cell *matCellDef="let element">{{element.age}}</td>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <!--      definiendo nombre de la columna-->
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="">address</th>
+      <td mat-cell *matCellDef="let element">{{element.address}}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <!--      definiendo nombre de la columna, pero ACTIONS NO EXISTE-->
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="">Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <!--        colocando un boton para editar-->
+        <a href="javascript:void (0)" (click)="editItem(element)">
+          <mat-icon>edit</mat-icon>
+        </a>
+        <!--        colocando un boton para eliminar-->
+        <a href="javascript:void (0)" (click)="deleteItem(element.id)">
+          <mat-icon>delete</mat-icon>
+        </a>
+
+
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"
+        [ngClass]="{'editable-row': studentsData.id===row.id}"></tr>
+
+  </table>
+<!--  //haciendo el paginator-->
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,15]" showFirstLastButtons></mat-paginator>
+
+
+</div>
