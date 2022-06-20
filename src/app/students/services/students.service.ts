@@ -11,9 +11,9 @@ export class StudentsService {
   //el endpoint de students
   //ahora que tenemos un link nuevo (firebase)
   //la db no envia la info porque sigue con la antigua
- // basePath = "http://localhost:3000/api/v1/students"; //manejo de rutas
+  //basePath = "http://localhost:3000/api/v1/students"; //manejo de rutas
   //llevando la db al link firebase
-  basePath = "https://learningcenter-39587.web.app/students";
+  basePath = "https://my-json-server.typicode.com/VivianMPQ/malogrando-se-aprende/students";
 
   //http
   httpOptions = {

@@ -1,0 +1,56 @@
+<p>sign-in works!</p>
+<mat-card>
+  <mat-card-title>Sing in</mat-card-title>
+  <form [formGroup]="signInForm">
+    <div>
+      <mat-grid-list cols="1" rowHeight="100px">
+        <!--        para el email-->
+        <mat-grid-tile>
+          <mat-form-field style="...">
+            <mat-label>Email</mat-label>
+            <!--            para ingresar los datos se usa el input -->
+            <input matInput
+                   placeholder="user@domain.com"
+                   formControlName="email"
+                   required/>
+            <!--            usando un if para el ingreso del email (invalido, vacio, etc)-->
+            <div *ngIf="email.invalid && (email.dirty|| email!.touched)">
+              <!--              si el email es invalido-->
+              <mat-error *ngIf="email.errors?.['email']">You must enter a valid email address</mat-error>
+              <!--              si el input está vacio, osea no colocó el email-->
+              <mat-error *ngIf="email.errors?.['required']">Email is required</mat-error>
+
+            </div>
+
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--        para el password-->
+        <mat-grid-tile>
+          <mat-form-field style="...">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="write your password :3"
+              formControlName="password"
+              required/>
+
+            <div *ngIf="password.invalid && (password.dirty|| password!.touched)">
+              <mat-error *ngIf="password.errors?.['minLength']"> Password must be at least 6 characters length</mat-error>
+              <mat-error *ngIf="password.errors?.['required']">Password is required</mat-error>
+
+            </div>
+
+
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </div>
+
+    <mat-card-actions align="end">
+      <button mat-button class="material-button" (click)="cancelSignIn()">Cancel sing-in</button>
+      <button mat-button class="material-button" (click)="signIn()">Sign-In</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
